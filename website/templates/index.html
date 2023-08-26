@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+    #button-register, #button-signup, #button-login {
+        transition: opacity, 1s;
+    }
+
+    #button-register:hover, #button-signup:hover, #button-login:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+
+    #button-register:active, #button-signup:active, #button-login:active {
+        transform: translateY(3px);
+    }
+
+    .greet {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        column-gap: 20px;
+    }
+    .button-greet {
+        background-color: blue;
+        color: white;
+        transition: opacity, 1s;
+    }
+    .button-greet:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    .button-greet:active {
+        opacity: 0.2;
+    }
+
+
+</style>
+<div style="height: 50px; width: 100%; display: flex; background-color: green; position: fixed; top: 0; left: 0;"> 
+
+    <div style="flex: 1; display: flex; justify-content: right; align-items: center;">
+        <div style="margin-right: 10px;">
+            <form action="/register" >
+                <input id="button-register" type="submit" style="background-color: rgb(0, 59, 0); color: white; border: none; height: 50px; padding-left: 10px; padding-right: 10px; border-radius: 5px;" value="REGISTER">
+            </form>
+        </div>
+        <div style="margin-right: 10px;">
+            <form method="POST" action="/spage">
+                <input id="button-signup" style="background-color: rgb(255, 0, 43); color: white; border: none; height: 50px; padding-left: 10px; padding-right: 10px; border-radius: 5px;" type="submit" value="SIGNUP">
+            </form>
+        </div>
+        <div style="margin-right: 10px; ">
+            <form method="POST" action="/lpage">
+                <input id="button-login" style="background-color: blue; color: white; border: none; height: 50px; padding-left: 10px; padding-right: 10px; border-radius: 5px;" type="submit" value="LOGIN">
+            </form>
+        </div>
+    </div>
+</div>
+<div></div>
+<div class="greet">
+    <div></div>
+    <div style="height: 400px; display: flex; align-items: center; justify-content: center;">
+        <form action="/greet" method="post">
+            <input type="text" style="height: 30px; width: 300px;" placeholder="Your name" name="name">
+            <input class="button-greet" type="submit" value="GREET ME" style="height: 35px; padding-left: 20px; padding-right: 20px;" >
+        </form>
+    </div>
+    <div></div>
+    <div></div>
+</div>
+
+    
+
+
+
+
+
+{% endblock %}

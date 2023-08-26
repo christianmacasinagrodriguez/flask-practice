@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  
+  <form action="/" style="top: 50%; left: 50%; position: absolute; transform: translate(-50%,-50%); text-align: center;">
+      <input type="submit" value="BACK">
+      <input type="submit" value="CALCULATE" onclick="myFunction()">
+  </form>
+  <script>
+    function myFunction() {
+        document.write(10 + 12)
+    }
+</script>
+
+{% endblock %}

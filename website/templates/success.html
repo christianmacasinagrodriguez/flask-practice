@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    You are now registered to {{ request.args.get("laro") }}!
+    <form action="/" style="top: 50%; left: 50%; position: absolute; transform: translate(-50%,-50%); text-align: center;">
+        <input type="submit" value="BACK">
+    </form>
+
+{% endblock %}
